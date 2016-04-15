@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option java_package = "com.jakepartusch.domain";
-option java_outer_classname = "OuterSample";
+option java_package = "com.jakepartusch.generated.domain";
+option java_outer_classname = "OuterPersonProto";
 option java_multiple_files = true;
 
 
