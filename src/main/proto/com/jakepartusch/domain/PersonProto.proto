@@ -8,4 +8,12 @@ option java_multiple_files = true;
 message PersonProto {
     string firstName = 1;
     string lastName = 2;
+    string emailAddress = 3;
+    string homeAddress = 4;
+    repeated PhoneNumber phoneNumbers = 5;
+
+    message PhoneNumber {
+        int32 areaCode = 1;
+        int32 phoneNumber = 2;
+    }
 }

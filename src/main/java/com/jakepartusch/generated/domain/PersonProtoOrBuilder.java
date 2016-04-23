@@ -26,4 +26,48 @@ public interface PersonProtoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLastNameBytes();
+
+  /**
+   * <code>optional string emailAddress = 3;</code>
+   */
+  java.lang.String getEmailAddress();
+  /**
+   * <code>optional string emailAddress = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getEmailAddressBytes();
+
+  /**
+   * <code>optional string homeAddress = 4;</code>
+   */
+  java.lang.String getHomeAddress();
+  /**
+   * <code>optional string homeAddress = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getHomeAddressBytes();
+
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  java.util.List<com.jakepartusch.generated.domain.PersonProto.PhoneNumber> 
+      getPhoneNumbersList();
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  com.jakepartusch.generated.domain.PersonProto.PhoneNumber getPhoneNumbers(int index);
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  int getPhoneNumbersCount();
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  java.util.List<? extends com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> 
+      getPhoneNumbersOrBuilderList();
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder getPhoneNumbersOrBuilder(
+      int index);
 }

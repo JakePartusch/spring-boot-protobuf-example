@@ -17,6 +17,9 @@ public  final class PersonProto extends
   private PersonProto() {
     firstName_ = "";
     lastName_ = "";
+    emailAddress_ = "";
+    homeAddress_ = "";
+    phoneNumbers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -55,6 +58,26 @@ public  final class PersonProto extends
             lastName_ = bs;
             break;
           }
+          case 26: {
+            com.google.protobuf.ByteString bs = input.readBytes();
+
+            emailAddress_ = bs;
+            break;
+          }
+          case 34: {
+            com.google.protobuf.ByteString bs = input.readBytes();
+
+            homeAddress_ = bs;
+            break;
+          }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              phoneNumbers_ = new java.util.ArrayList<com.jakepartusch.generated.domain.PersonProto.PhoneNumber>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            phoneNumbers_.add(input.readMessage(com.jakepartusch.generated.domain.PersonProto.PhoneNumber.PARSER, extensionRegistry));
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -64,6 +87,9 @@ public  final class PersonProto extends
           new com.google.protobuf.InvalidProtocolBufferException(
               e.getMessage()).setUnfinishedMessage(this));
     } finally {
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
+      }
       makeExtensionsImmutable();
     }
   }
@@ -79,6 +105,438 @@ public  final class PersonProto extends
             com.jakepartusch.generated.domain.PersonProto.class, com.jakepartusch.generated.domain.PersonProto.Builder.class);
   }
 
+  public interface PhoneNumberOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PersonProto.PhoneNumber)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 areaCode = 1;</code>
+     */
+    int getAreaCode();
+
+    /**
+     * <code>optional int32 phoneNumber = 2;</code>
+     */
+    int getPhoneNumber();
+  }
+  /**
+   * Protobuf type {@code PersonProto.PhoneNumber}
+   */
+  public  static final class PhoneNumber extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:PersonProto.PhoneNumber)
+      PhoneNumberOrBuilder {
+    // Use PhoneNumber.newBuilder() to construct.
+    private PhoneNumber(com.google.protobuf.GeneratedMessage.Builder builder) {
+      super(builder);
+    }
+    private PhoneNumber() {
+      areaCode_ = 0;
+      phoneNumber_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private PhoneNumber(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              areaCode_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              phoneNumber_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw new RuntimeException(e.setUnfinishedMessage(this));
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jakepartusch.generated.domain.PersonProto.PhoneNumber.class, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder.class);
+    }
+
+    public static final int AREACODE_FIELD_NUMBER = 1;
+    private int areaCode_;
+    /**
+     * <code>optional int32 areaCode = 1;</code>
+     */
+    public int getAreaCode() {
+      return areaCode_;
+    }
+
+    public static final int PHONENUMBER_FIELD_NUMBER = 2;
+    private int phoneNumber_;
+    /**
+     * <code>optional int32 phoneNumber = 2;</code>
+     */
+    public int getPhoneNumber() {
+      return phoneNumber_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (areaCode_ != 0) {
+        output.writeInt32(1, areaCode_);
+      }
+      if (phoneNumber_ != 0) {
+        output.writeInt32(2, phoneNumber_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (areaCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, areaCode_);
+      }
+      if (phoneNumber_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, phoneNumber_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jakepartusch.generated.domain.PersonProto.PhoneNumber prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code PersonProto.PhoneNumber}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:PersonProto.PhoneNumber)
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jakepartusch.generated.domain.PersonProto.PhoneNumber.class, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder.class);
+      }
+
+      // Construct using com.jakepartusch.generated.domain.PersonProto.PhoneNumber.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        areaCode_ = 0;
+
+        phoneNumber_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_descriptor;
+      }
+
+      public com.jakepartusch.generated.domain.PersonProto.PhoneNumber getDefaultInstanceForType() {
+        return com.jakepartusch.generated.domain.PersonProto.PhoneNumber.getDefaultInstance();
+      }
+
+      public com.jakepartusch.generated.domain.PersonProto.PhoneNumber build() {
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumber result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.jakepartusch.generated.domain.PersonProto.PhoneNumber buildPartial() {
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumber result = new com.jakepartusch.generated.domain.PersonProto.PhoneNumber(this);
+        result.areaCode_ = areaCode_;
+        result.phoneNumber_ = phoneNumber_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jakepartusch.generated.domain.PersonProto.PhoneNumber) {
+          return mergeFrom((com.jakepartusch.generated.domain.PersonProto.PhoneNumber)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jakepartusch.generated.domain.PersonProto.PhoneNumber other) {
+        if (other == com.jakepartusch.generated.domain.PersonProto.PhoneNumber.getDefaultInstance()) return this;
+        if (other.getAreaCode() != 0) {
+          setAreaCode(other.getAreaCode());
+        }
+        if (other.getPhoneNumber() != 0) {
+          setPhoneNumber(other.getPhoneNumber());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumber parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jakepartusch.generated.domain.PersonProto.PhoneNumber) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int areaCode_ ;
+      /**
+       * <code>optional int32 areaCode = 1;</code>
+       */
+      public int getAreaCode() {
+        return areaCode_;
+      }
+      /**
+       * <code>optional int32 areaCode = 1;</code>
+       */
+      public Builder setAreaCode(int value) {
+        
+        areaCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 areaCode = 1;</code>
+       */
+      public Builder clearAreaCode() {
+        
+        areaCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int phoneNumber_ ;
+      /**
+       * <code>optional int32 phoneNumber = 2;</code>
+       */
+      public int getPhoneNumber() {
+        return phoneNumber_;
+      }
+      /**
+       * <code>optional int32 phoneNumber = 2;</code>
+       */
+      public Builder setPhoneNumber(int value) {
+        
+        phoneNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 phoneNumber = 2;</code>
+       */
+      public Builder clearPhoneNumber() {
+        
+        phoneNumber_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:PersonProto.PhoneNumber)
+    }
+
+    // @@protoc_insertion_point(class_scope:PersonProto.PhoneNumber)
+    private static final com.jakepartusch.generated.domain.PersonProto.PhoneNumber DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jakepartusch.generated.domain.PersonProto.PhoneNumber();
+    }
+
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static final com.google.protobuf.Parser<PhoneNumber> PARSER =
+        new com.google.protobuf.AbstractParser<PhoneNumber>() {
+      public PhoneNumber parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new PhoneNumber(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PhoneNumber> getParserForType() {
+      return PARSER;
+    }
+
+    public com.jakepartusch.generated.domain.PersonProto.PhoneNumber getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private int bitField0_;
   public static final int FIRSTNAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object firstName_;
   /**
@@ -151,6 +609,113 @@ public  final class PersonProto extends
     }
   }
 
+  public static final int EMAILADDRESS_FIELD_NUMBER = 3;
+  private volatile java.lang.Object emailAddress_;
+  /**
+   * <code>optional string emailAddress = 3;</code>
+   */
+  public java.lang.String getEmailAddress() {
+    java.lang.Object ref = emailAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (bs.isValidUtf8()) {
+        emailAddress_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <code>optional string emailAddress = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getEmailAddressBytes() {
+    java.lang.Object ref = emailAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      emailAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int HOMEADDRESS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object homeAddress_;
+  /**
+   * <code>optional string homeAddress = 4;</code>
+   */
+  public java.lang.String getHomeAddress() {
+    java.lang.Object ref = homeAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (bs.isValidUtf8()) {
+        homeAddress_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <code>optional string homeAddress = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getHomeAddressBytes() {
+    java.lang.Object ref = homeAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      homeAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PHONENUMBERS_FIELD_NUMBER = 5;
+  private java.util.List<com.jakepartusch.generated.domain.PersonProto.PhoneNumber> phoneNumbers_;
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public java.util.List<com.jakepartusch.generated.domain.PersonProto.PhoneNumber> getPhoneNumbersList() {
+    return phoneNumbers_;
+  }
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public java.util.List<? extends com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> 
+      getPhoneNumbersOrBuilderList() {
+    return phoneNumbers_;
+  }
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public int getPhoneNumbersCount() {
+    return phoneNumbers_.size();
+  }
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public com.jakepartusch.generated.domain.PersonProto.PhoneNumber getPhoneNumbers(int index) {
+    return phoneNumbers_.get(index);
+  }
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder getPhoneNumbersOrBuilder(
+      int index) {
+    return phoneNumbers_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -169,6 +734,15 @@ public  final class PersonProto extends
     if (!getLastNameBytes().isEmpty()) {
       output.writeBytes(2, getLastNameBytes());
     }
+    if (!getEmailAddressBytes().isEmpty()) {
+      output.writeBytes(3, getEmailAddressBytes());
+    }
+    if (!getHomeAddressBytes().isEmpty()) {
+      output.writeBytes(4, getHomeAddressBytes());
+    }
+    for (int i = 0; i < phoneNumbers_.size(); i++) {
+      output.writeMessage(5, phoneNumbers_.get(i));
+    }
   }
 
   private int memoizedSerializedSize = -1;
@@ -184,6 +758,18 @@ public  final class PersonProto extends
     if (!getLastNameBytes().isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, getLastNameBytes());
+    }
+    if (!getEmailAddressBytes().isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(3, getEmailAddressBytes());
+    }
+    if (!getHomeAddressBytes().isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(4, getHomeAddressBytes());
+    }
+    for (int i = 0; i < phoneNumbers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, phoneNumbers_.get(i));
     }
     memoizedSerializedSize = size;
     return size;
@@ -292,6 +878,7 @@ public  final class PersonProto extends
     }
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        getPhoneNumbersFieldBuilder();
       }
     }
     public Builder clear() {
@@ -300,6 +887,16 @@ public  final class PersonProto extends
 
       lastName_ = "";
 
+      emailAddress_ = "";
+
+      homeAddress_ = "";
+
+      if (phoneNumbersBuilder_ == null) {
+        phoneNumbers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        phoneNumbersBuilder_.clear();
+      }
       return this;
     }
 
@@ -322,8 +919,22 @@ public  final class PersonProto extends
 
     public com.jakepartusch.generated.domain.PersonProto buildPartial() {
       com.jakepartusch.generated.domain.PersonProto result = new com.jakepartusch.generated.domain.PersonProto(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.firstName_ = firstName_;
       result.lastName_ = lastName_;
+      result.emailAddress_ = emailAddress_;
+      result.homeAddress_ = homeAddress_;
+      if (phoneNumbersBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.phoneNumbers_ = phoneNumbers_;
+      } else {
+        result.phoneNumbers_ = phoneNumbersBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -346,6 +957,40 @@ public  final class PersonProto extends
       if (!other.getLastName().isEmpty()) {
         lastName_ = other.lastName_;
         onChanged();
+      }
+      if (!other.getEmailAddress().isEmpty()) {
+        emailAddress_ = other.emailAddress_;
+        onChanged();
+      }
+      if (!other.getHomeAddress().isEmpty()) {
+        homeAddress_ = other.homeAddress_;
+        onChanged();
+      }
+      if (phoneNumbersBuilder_ == null) {
+        if (!other.phoneNumbers_.isEmpty()) {
+          if (phoneNumbers_.isEmpty()) {
+            phoneNumbers_ = other.phoneNumbers_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePhoneNumbersIsMutable();
+            phoneNumbers_.addAll(other.phoneNumbers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.phoneNumbers_.isEmpty()) {
+          if (phoneNumbersBuilder_.isEmpty()) {
+            phoneNumbersBuilder_.dispose();
+            phoneNumbersBuilder_ = null;
+            phoneNumbers_ = other.phoneNumbers_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            phoneNumbersBuilder_ = 
+              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                 getPhoneNumbersFieldBuilder() : null;
+          } else {
+            phoneNumbersBuilder_.addAllMessages(other.phoneNumbers_);
+          }
+        }
       }
       onChanged();
       return this;
@@ -372,6 +1017,7 @@ public  final class PersonProto extends
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object firstName_ = "";
     /**
@@ -511,6 +1157,386 @@ public  final class PersonProto extends
       lastName_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object emailAddress_ = "";
+    /**
+     * <code>optional string emailAddress = 3;</code>
+     */
+    public java.lang.String getEmailAddress() {
+      java.lang.Object ref = emailAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          emailAddress_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string emailAddress = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailAddressBytes() {
+      java.lang.Object ref = emailAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        emailAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string emailAddress = 3;</code>
+     */
+    public Builder setEmailAddress(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      emailAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string emailAddress = 3;</code>
+     */
+    public Builder clearEmailAddress() {
+      
+      emailAddress_ = getDefaultInstance().getEmailAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string emailAddress = 3;</code>
+     */
+    public Builder setEmailAddressBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      emailAddress_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object homeAddress_ = "";
+    /**
+     * <code>optional string homeAddress = 4;</code>
+     */
+    public java.lang.String getHomeAddress() {
+      java.lang.Object ref = homeAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          homeAddress_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string homeAddress = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHomeAddressBytes() {
+      java.lang.Object ref = homeAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        homeAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string homeAddress = 4;</code>
+     */
+    public Builder setHomeAddress(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      homeAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string homeAddress = 4;</code>
+     */
+    public Builder clearHomeAddress() {
+      
+      homeAddress_ = getDefaultInstance().getHomeAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string homeAddress = 4;</code>
+     */
+    public Builder setHomeAddressBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      homeAddress_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.jakepartusch.generated.domain.PersonProto.PhoneNumber> phoneNumbers_ =
+      java.util.Collections.emptyList();
+    private void ensurePhoneNumbersIsMutable() {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        phoneNumbers_ = new java.util.ArrayList<com.jakepartusch.generated.domain.PersonProto.PhoneNumber>(phoneNumbers_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumber, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder, com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> phoneNumbersBuilder_;
+
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public java.util.List<com.jakepartusch.generated.domain.PersonProto.PhoneNumber> getPhoneNumbersList() {
+      if (phoneNumbersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(phoneNumbers_);
+      } else {
+        return phoneNumbersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public int getPhoneNumbersCount() {
+      if (phoneNumbersBuilder_ == null) {
+        return phoneNumbers_.size();
+      } else {
+        return phoneNumbersBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public com.jakepartusch.generated.domain.PersonProto.PhoneNumber getPhoneNumbers(int index) {
+      if (phoneNumbersBuilder_ == null) {
+        return phoneNumbers_.get(index);
+      } else {
+        return phoneNumbersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder setPhoneNumbers(
+        int index, com.jakepartusch.generated.domain.PersonProto.PhoneNumber value) {
+      if (phoneNumbersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.set(index, value);
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder setPhoneNumbers(
+        int index, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder builderForValue) {
+      if (phoneNumbersBuilder_ == null) {
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder addPhoneNumbers(com.jakepartusch.generated.domain.PersonProto.PhoneNumber value) {
+      if (phoneNumbersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.add(value);
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder addPhoneNumbers(
+        int index, com.jakepartusch.generated.domain.PersonProto.PhoneNumber value) {
+      if (phoneNumbersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.add(index, value);
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder addPhoneNumbers(
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder builderForValue) {
+      if (phoneNumbersBuilder_ == null) {
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder addPhoneNumbers(
+        int index, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder builderForValue) {
+      if (phoneNumbersBuilder_ == null) {
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder addAllPhoneNumbers(
+        java.lang.Iterable<? extends com.jakepartusch.generated.domain.PersonProto.PhoneNumber> values) {
+      if (phoneNumbersBuilder_ == null) {
+        ensurePhoneNumbersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, phoneNumbers_);
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder clearPhoneNumbers() {
+      if (phoneNumbersBuilder_ == null) {
+        phoneNumbers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public Builder removePhoneNumbers(int index) {
+      if (phoneNumbersBuilder_ == null) {
+        ensurePhoneNumbersIsMutable();
+        phoneNumbers_.remove(index);
+        onChanged();
+      } else {
+        phoneNumbersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder getPhoneNumbersBuilder(
+        int index) {
+      return getPhoneNumbersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder getPhoneNumbersOrBuilder(
+        int index) {
+      if (phoneNumbersBuilder_ == null) {
+        return phoneNumbers_.get(index);  } else {
+        return phoneNumbersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public java.util.List<? extends com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> 
+         getPhoneNumbersOrBuilderList() {
+      if (phoneNumbersBuilder_ != null) {
+        return phoneNumbersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(phoneNumbers_);
+      }
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder addPhoneNumbersBuilder() {
+      return getPhoneNumbersFieldBuilder().addBuilder(
+          com.jakepartusch.generated.domain.PersonProto.PhoneNumber.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder addPhoneNumbersBuilder(
+        int index) {
+      return getPhoneNumbersFieldBuilder().addBuilder(
+          index, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+     */
+    public java.util.List<com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder> 
+         getPhoneNumbersBuilderList() {
+      return getPhoneNumbersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilder<
+        com.jakepartusch.generated.domain.PersonProto.PhoneNumber, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder, com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> 
+        getPhoneNumbersFieldBuilder() {
+      if (phoneNumbersBuilder_ == null) {
+        phoneNumbersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+            com.jakepartusch.generated.domain.PersonProto.PhoneNumber, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder, com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder>(
+                phoneNumbers_,
+                ((bitField0_ & 0x00000010) == 0x00000010),
+                getParentForChildren(),
+                isClean());
+        phoneNumbers_ = null;
+      }
+      return phoneNumbersBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
