@@ -1,6 +1,6 @@
 # spring-boot-protobuf-example
 
-##Usage
+## Usage
 
 ```
 ./gradlew bootRun
