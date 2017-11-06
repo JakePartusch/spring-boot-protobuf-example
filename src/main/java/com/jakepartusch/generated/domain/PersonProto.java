@@ -7,11 +7,12 @@ package com.jakepartusch.generated.domain;
  * Protobuf type {@code PersonProto}
  */
 public  final class PersonProto extends
-    com.google.protobuf.GeneratedMessage implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:PersonProto)
     PersonProtoOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use PersonProto.newBuilder() to construct.
-  private PersonProto(com.google.protobuf.GeneratedMessage.Builder builder) {
+  private PersonProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private PersonProto() {
@@ -25,13 +26,16 @@ public  final class PersonProto extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private PersonProto(
       com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -41,33 +45,34 @@ public  final class PersonProto extends
             done = true;
             break;
           default: {
-            if (!input.skipField(tag)) {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
             break;
           }
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
+            java.lang.String s = input.readStringRequireUtf8();
 
-            firstName_ = bs;
+            firstName_ = s;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
+            java.lang.String s = input.readStringRequireUtf8();
 
-            lastName_ = bs;
+            lastName_ = s;
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
+            java.lang.String s = input.readStringRequireUtf8();
 
-            emailAddress_ = bs;
+            emailAddress_ = s;
             break;
           }
           case 34: {
-            com.google.protobuf.ByteString bs = input.readBytes();
+            java.lang.String s = input.readStringRequireUtf8();
 
-            homeAddress_ = bs;
+            homeAddress_ = s;
             break;
           }
           case 42: {
@@ -75,21 +80,22 @@ public  final class PersonProto extends
               phoneNumbers_ = new java.util.ArrayList<com.jakepartusch.generated.domain.PersonProto.PhoneNumber>();
               mutable_bitField0_ |= 0x00000010;
             }
-            phoneNumbers_.add(input.readMessage(com.jakepartusch.generated.domain.PersonProto.PhoneNumber.PARSER, extensionRegistry));
+            phoneNumbers_.add(
+                input.readMessage(com.jakepartusch.generated.domain.PersonProto.PhoneNumber.parser(), extensionRegistry));
             break;
           }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw new RuntimeException(e.setUnfinishedMessage(this));
+      throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new RuntimeException(
-          new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this));
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         phoneNumbers_ = java.util.Collections.unmodifiableList(phoneNumbers_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -98,7 +104,7 @@ public  final class PersonProto extends
     return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -110,12 +116,12 @@ public  final class PersonProto extends
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 areaCode = 1;</code>
+     * <code>int32 areaCode = 1;</code>
      */
     int getAreaCode();
 
     /**
-     * <code>optional int32 phoneNumber = 2;</code>
+     * <code>int32 phoneNumber = 2;</code>
      */
     int getPhoneNumber();
   }
@@ -123,11 +129,12 @@ public  final class PersonProto extends
    * Protobuf type {@code PersonProto.PhoneNumber}
    */
   public  static final class PhoneNumber extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:PersonProto.PhoneNumber)
       PhoneNumberOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use PhoneNumber.newBuilder() to construct.
-    private PhoneNumber(com.google.protobuf.GeneratedMessage.Builder builder) {
+    private PhoneNumber(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private PhoneNumber() {
@@ -138,13 +145,16 @@ public  final class PersonProto extends
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private PhoneNumber(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -154,7 +164,8 @@ public  final class PersonProto extends
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -172,12 +183,12 @@ public  final class PersonProto extends
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -186,7 +197,7 @@ public  final class PersonProto extends
       return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -196,7 +207,7 @@ public  final class PersonProto extends
     public static final int AREACODE_FIELD_NUMBER = 1;
     private int areaCode_;
     /**
-     * <code>optional int32 areaCode = 1;</code>
+     * <code>int32 areaCode = 1;</code>
      */
     public int getAreaCode() {
       return areaCode_;
@@ -205,7 +216,7 @@ public  final class PersonProto extends
     public static final int PHONENUMBER_FIELD_NUMBER = 2;
     private int phoneNumber_;
     /**
-     * <code>optional int32 phoneNumber = 2;</code>
+     * <code>int32 phoneNumber = 2;</code>
      */
     public int getPhoneNumber() {
       return phoneNumber_;
@@ -229,11 +240,11 @@ public  final class PersonProto extends
       if (phoneNumber_ != 0) {
         output.writeInt32(2, phoneNumber_);
       }
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -245,11 +256,57 @@ public  final class PersonProto extends
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, phoneNumber_);
       }
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jakepartusch.generated.domain.PersonProto.PhoneNumber)) {
+        return super.equals(obj);
+      }
+      com.jakepartusch.generated.domain.PersonProto.PhoneNumber other = (com.jakepartusch.generated.domain.PersonProto.PhoneNumber) obj;
+
+      boolean result = true;
+      result = result && (getAreaCode()
+          == other.getAreaCode());
+      result = result && (getPhoneNumber()
+          == other.getPhoneNumber());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AREACODE_FIELD_NUMBER;
+      hash = (53 * hash) + getAreaCode();
+      hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumber();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -273,34 +330,40 @@ public  final class PersonProto extends
     }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static com.jakepartusch.generated.domain.PersonProto.PhoneNumber parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -317,7 +380,7 @@ public  final class PersonProto extends
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -325,7 +388,7 @@ public  final class PersonProto extends
      * Protobuf type {@code PersonProto.PhoneNumber}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:PersonProto.PhoneNumber)
         com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -333,7 +396,7 @@ public  final class PersonProto extends
         return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_PhoneNumber_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -346,12 +409,13 @@ public  final class PersonProto extends
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       public Builder clear() {
@@ -388,6 +452,32 @@ public  final class PersonProto extends
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.jakepartusch.generated.domain.PersonProto.PhoneNumber) {
           return mergeFrom((com.jakepartusch.generated.domain.PersonProto.PhoneNumber)other);
@@ -405,6 +495,7 @@ public  final class PersonProto extends
         if (other.getPhoneNumber() != 0) {
           setPhoneNumber(other.getPhoneNumber());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -422,7 +513,7 @@ public  final class PersonProto extends
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (com.jakepartusch.generated.domain.PersonProto.PhoneNumber) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -433,13 +524,13 @@ public  final class PersonProto extends
 
       private int areaCode_ ;
       /**
-       * <code>optional int32 areaCode = 1;</code>
+       * <code>int32 areaCode = 1;</code>
        */
       public int getAreaCode() {
         return areaCode_;
       }
       /**
-       * <code>optional int32 areaCode = 1;</code>
+       * <code>int32 areaCode = 1;</code>
        */
       public Builder setAreaCode(int value) {
         
@@ -448,7 +539,7 @@ public  final class PersonProto extends
         return this;
       }
       /**
-       * <code>optional int32 areaCode = 1;</code>
+       * <code>int32 areaCode = 1;</code>
        */
       public Builder clearAreaCode() {
         
@@ -459,13 +550,13 @@ public  final class PersonProto extends
 
       private int phoneNumber_ ;
       /**
-       * <code>optional int32 phoneNumber = 2;</code>
+       * <code>int32 phoneNumber = 2;</code>
        */
       public int getPhoneNumber() {
         return phoneNumber_;
       }
       /**
-       * <code>optional int32 phoneNumber = 2;</code>
+       * <code>int32 phoneNumber = 2;</code>
        */
       public Builder setPhoneNumber(int value) {
         
@@ -474,7 +565,7 @@ public  final class PersonProto extends
         return this;
       }
       /**
-       * <code>optional int32 phoneNumber = 2;</code>
+       * <code>int32 phoneNumber = 2;</code>
        */
       public Builder clearPhoneNumber() {
         
@@ -484,12 +575,12 @@ public  final class PersonProto extends
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -506,24 +597,19 @@ public  final class PersonProto extends
       return DEFAULT_INSTANCE;
     }
 
-    public static final com.google.protobuf.Parser<PhoneNumber> PARSER =
-        new com.google.protobuf.AbstractParser<PhoneNumber>() {
+    private static final com.google.protobuf.Parser<PhoneNumber>
+        PARSER = new com.google.protobuf.AbstractParser<PhoneNumber>() {
       public PhoneNumber parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new PhoneNumber(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
+
+    public static com.google.protobuf.Parser<PhoneNumber> parser() {
+      return PARSER;
+    }
 
     @java.lang.Override
     public com.google.protobuf.Parser<PhoneNumber> getParserForType() {
@@ -540,7 +626,7 @@ public  final class PersonProto extends
   public static final int FIRSTNAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object firstName_;
   /**
-   * <code>optional string firstName = 1;</code>
+   * <code>string firstName = 1;</code>
    */
   public java.lang.String getFirstName() {
     java.lang.Object ref = firstName_;
@@ -550,14 +636,12 @@ public  final class PersonProto extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        firstName_ = s;
-      }
+      firstName_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string firstName = 1;</code>
+   * <code>string firstName = 1;</code>
    */
   public com.google.protobuf.ByteString
       getFirstNameBytes() {
@@ -576,7 +660,7 @@ public  final class PersonProto extends
   public static final int LASTNAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object lastName_;
   /**
-   * <code>optional string lastName = 2;</code>
+   * <code>string lastName = 2;</code>
    */
   public java.lang.String getLastName() {
     java.lang.Object ref = lastName_;
@@ -586,14 +670,12 @@ public  final class PersonProto extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        lastName_ = s;
-      }
+      lastName_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string lastName = 2;</code>
+   * <code>string lastName = 2;</code>
    */
   public com.google.protobuf.ByteString
       getLastNameBytes() {
@@ -612,7 +694,7 @@ public  final class PersonProto extends
   public static final int EMAILADDRESS_FIELD_NUMBER = 3;
   private volatile java.lang.Object emailAddress_;
   /**
-   * <code>optional string emailAddress = 3;</code>
+   * <code>string emailAddress = 3;</code>
    */
   public java.lang.String getEmailAddress() {
     java.lang.Object ref = emailAddress_;
@@ -622,14 +704,12 @@ public  final class PersonProto extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        emailAddress_ = s;
-      }
+      emailAddress_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string emailAddress = 3;</code>
+   * <code>string emailAddress = 3;</code>
    */
   public com.google.protobuf.ByteString
       getEmailAddressBytes() {
@@ -648,7 +728,7 @@ public  final class PersonProto extends
   public static final int HOMEADDRESS_FIELD_NUMBER = 4;
   private volatile java.lang.Object homeAddress_;
   /**
-   * <code>optional string homeAddress = 4;</code>
+   * <code>string homeAddress = 4;</code>
    */
   public java.lang.String getHomeAddress() {
     java.lang.Object ref = homeAddress_;
@@ -658,14 +738,12 @@ public  final class PersonProto extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        homeAddress_ = s;
-      }
+      homeAddress_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string homeAddress = 4;</code>
+   * <code>string homeAddress = 4;</code>
    */
   public com.google.protobuf.ByteString
       getHomeAddressBytes() {
@@ -729,53 +807,109 @@ public  final class PersonProto extends
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getFirstNameBytes().isEmpty()) {
-      output.writeBytes(1, getFirstNameBytes());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
     }
     if (!getLastNameBytes().isEmpty()) {
-      output.writeBytes(2, getLastNameBytes());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
     }
     if (!getEmailAddressBytes().isEmpty()) {
-      output.writeBytes(3, getEmailAddressBytes());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, emailAddress_);
     }
     if (!getHomeAddressBytes().isEmpty()) {
-      output.writeBytes(4, getHomeAddressBytes());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, homeAddress_);
     }
     for (int i = 0; i < phoneNumbers_.size(); i++) {
       output.writeMessage(5, phoneNumbers_.get(i));
     }
+    unknownFields.writeTo(output);
   }
 
-  private int memoizedSerializedSize = -1;
   public int getSerializedSize() {
-    int size = memoizedSerializedSize;
+    int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (!getFirstNameBytes().isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(1, getFirstNameBytes());
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
     }
     if (!getLastNameBytes().isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, getLastNameBytes());
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
     }
     if (!getEmailAddressBytes().isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(3, getEmailAddressBytes());
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, emailAddress_);
     }
     if (!getHomeAddressBytes().isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(4, getHomeAddressBytes());
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, homeAddress_);
     }
     for (int i = 0; i < phoneNumbers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, phoneNumbers_.get(i));
     }
-    memoizedSerializedSize = size;
+    size += unknownFields.getSerializedSize();
+    memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
+    if (obj == this) {
+     return true;
+    }
+    if (!(obj instanceof com.jakepartusch.generated.domain.PersonProto)) {
+      return super.equals(obj);
+    }
+    com.jakepartusch.generated.domain.PersonProto other = (com.jakepartusch.generated.domain.PersonProto) obj;
+
+    boolean result = true;
+    result = result && getFirstName()
+        .equals(other.getFirstName());
+    result = result && getLastName()
+        .equals(other.getLastName());
+    result = result && getEmailAddress()
+        .equals(other.getEmailAddress());
+    result = result && getHomeAddress()
+        .equals(other.getHomeAddress());
+    result = result && getPhoneNumbersList()
+        .equals(other.getPhoneNumbersList());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFirstName().hashCode();
+    hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getLastName().hashCode();
+    hash = (37 * hash) + EMAILADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getEmailAddress().hashCode();
+    hash = (37 * hash) + HOMEADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getHomeAddress().hashCode();
+    if (getPhoneNumbersCount() > 0) {
+      hash = (37 * hash) + PHONENUMBERS_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumbersList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static com.jakepartusch.generated.domain.PersonProto parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.jakepartusch.generated.domain.PersonProto parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.jakepartusch.generated.domain.PersonProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -799,34 +933,40 @@ public  final class PersonProto extends
   }
   public static com.jakepartusch.generated.domain.PersonProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return PARSER.parseFrom(input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
   public static com.jakepartusch.generated.domain.PersonProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return PARSER.parseFrom(input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
   public static com.jakepartusch.generated.domain.PersonProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return PARSER.parseDelimitedFrom(input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
   public static com.jakepartusch.generated.domain.PersonProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
   public static com.jakepartusch.generated.domain.PersonProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return PARSER.parseFrom(input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
   public static com.jakepartusch.generated.domain.PersonProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return PARSER.parseFrom(input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   public Builder newBuilderForType() { return newBuilder(); }
@@ -843,7 +983,7 @@ public  final class PersonProto extends
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -851,7 +991,7 @@ public  final class PersonProto extends
    * Protobuf type {@code PersonProto}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:PersonProto)
       com.jakepartusch.generated.domain.PersonProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -859,7 +999,7 @@ public  final class PersonProto extends
       return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.jakepartusch.generated.domain.OuterPersonProto.internal_static_PersonProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -872,12 +1012,13 @@ public  final class PersonProto extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
         getPhoneNumbersFieldBuilder();
       }
     }
@@ -939,6 +1080,32 @@ public  final class PersonProto extends
       return result;
     }
 
+    public Builder clone() {
+      return (Builder) super.clone();
+    }
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return (Builder) super.setField(field, value);
+    }
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return (Builder) super.clearField(field);
+    }
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return (Builder) super.clearOneof(oneof);
+    }
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
+    }
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return (Builder) super.addRepeatedField(field, value);
+    }
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.jakepartusch.generated.domain.PersonProto) {
         return mergeFrom((com.jakepartusch.generated.domain.PersonProto)other);
@@ -985,13 +1152,14 @@ public  final class PersonProto extends
             phoneNumbers_ = other.phoneNumbers_;
             bitField0_ = (bitField0_ & ~0x00000010);
             phoneNumbersBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPhoneNumbersFieldBuilder() : null;
           } else {
             phoneNumbersBuilder_.addAllMessages(other.phoneNumbers_);
           }
         }
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -1009,7 +1177,7 @@ public  final class PersonProto extends
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage = (com.jakepartusch.generated.domain.PersonProto) e.getUnfinishedMessage();
-        throw e;
+        throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
@@ -1021,7 +1189,7 @@ public  final class PersonProto extends
 
     private java.lang.Object firstName_ = "";
     /**
-     * <code>optional string firstName = 1;</code>
+     * <code>string firstName = 1;</code>
      */
     public java.lang.String getFirstName() {
       java.lang.Object ref = firstName_;
@@ -1029,16 +1197,14 @@ public  final class PersonProto extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          firstName_ = s;
-        }
+        firstName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string firstName = 1;</code>
+     * <code>string firstName = 1;</code>
      */
     public com.google.protobuf.ByteString
         getFirstNameBytes() {
@@ -1054,7 +1220,7 @@ public  final class PersonProto extends
       }
     }
     /**
-     * <code>optional string firstName = 1;</code>
+     * <code>string firstName = 1;</code>
      */
     public Builder setFirstName(
         java.lang.String value) {
@@ -1067,7 +1233,7 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string firstName = 1;</code>
+     * <code>string firstName = 1;</code>
      */
     public Builder clearFirstName() {
       
@@ -1076,14 +1242,15 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string firstName = 1;</code>
+     * <code>string firstName = 1;</code>
      */
     public Builder setFirstNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  checkByteStringIsUtf8(value);
+      
       firstName_ = value;
       onChanged();
       return this;
@@ -1091,7 +1258,7 @@ public  final class PersonProto extends
 
     private java.lang.Object lastName_ = "";
     /**
-     * <code>optional string lastName = 2;</code>
+     * <code>string lastName = 2;</code>
      */
     public java.lang.String getLastName() {
       java.lang.Object ref = lastName_;
@@ -1099,16 +1266,14 @@ public  final class PersonProto extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          lastName_ = s;
-        }
+        lastName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string lastName = 2;</code>
+     * <code>string lastName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLastNameBytes() {
@@ -1124,7 +1289,7 @@ public  final class PersonProto extends
       }
     }
     /**
-     * <code>optional string lastName = 2;</code>
+     * <code>string lastName = 2;</code>
      */
     public Builder setLastName(
         java.lang.String value) {
@@ -1137,7 +1302,7 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string lastName = 2;</code>
+     * <code>string lastName = 2;</code>
      */
     public Builder clearLastName() {
       
@@ -1146,14 +1311,15 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string lastName = 2;</code>
+     * <code>string lastName = 2;</code>
      */
     public Builder setLastNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  checkByteStringIsUtf8(value);
+      
       lastName_ = value;
       onChanged();
       return this;
@@ -1161,7 +1327,7 @@ public  final class PersonProto extends
 
     private java.lang.Object emailAddress_ = "";
     /**
-     * <code>optional string emailAddress = 3;</code>
+     * <code>string emailAddress = 3;</code>
      */
     public java.lang.String getEmailAddress() {
       java.lang.Object ref = emailAddress_;
@@ -1169,16 +1335,14 @@ public  final class PersonProto extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          emailAddress_ = s;
-        }
+        emailAddress_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string emailAddress = 3;</code>
+     * <code>string emailAddress = 3;</code>
      */
     public com.google.protobuf.ByteString
         getEmailAddressBytes() {
@@ -1194,7 +1358,7 @@ public  final class PersonProto extends
       }
     }
     /**
-     * <code>optional string emailAddress = 3;</code>
+     * <code>string emailAddress = 3;</code>
      */
     public Builder setEmailAddress(
         java.lang.String value) {
@@ -1207,7 +1371,7 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string emailAddress = 3;</code>
+     * <code>string emailAddress = 3;</code>
      */
     public Builder clearEmailAddress() {
       
@@ -1216,14 +1380,15 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string emailAddress = 3;</code>
+     * <code>string emailAddress = 3;</code>
      */
     public Builder setEmailAddressBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  checkByteStringIsUtf8(value);
+      
       emailAddress_ = value;
       onChanged();
       return this;
@@ -1231,7 +1396,7 @@ public  final class PersonProto extends
 
     private java.lang.Object homeAddress_ = "";
     /**
-     * <code>optional string homeAddress = 4;</code>
+     * <code>string homeAddress = 4;</code>
      */
     public java.lang.String getHomeAddress() {
       java.lang.Object ref = homeAddress_;
@@ -1239,16 +1404,14 @@ public  final class PersonProto extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          homeAddress_ = s;
-        }
+        homeAddress_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string homeAddress = 4;</code>
+     * <code>string homeAddress = 4;</code>
      */
     public com.google.protobuf.ByteString
         getHomeAddressBytes() {
@@ -1264,7 +1427,7 @@ public  final class PersonProto extends
       }
     }
     /**
-     * <code>optional string homeAddress = 4;</code>
+     * <code>string homeAddress = 4;</code>
      */
     public Builder setHomeAddress(
         java.lang.String value) {
@@ -1277,7 +1440,7 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string homeAddress = 4;</code>
+     * <code>string homeAddress = 4;</code>
      */
     public Builder clearHomeAddress() {
       
@@ -1286,14 +1449,15 @@ public  final class PersonProto extends
       return this;
     }
     /**
-     * <code>optional string homeAddress = 4;</code>
+     * <code>string homeAddress = 4;</code>
      */
     public Builder setHomeAddressBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  checkByteStringIsUtf8(value);
+      
       homeAddress_ = value;
       onChanged();
       return this;
@@ -1308,7 +1472,7 @@ public  final class PersonProto extends
        }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         com.jakepartusch.generated.domain.PersonProto.PhoneNumber, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder, com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> phoneNumbersBuilder_;
 
     /**
@@ -1524,11 +1688,11 @@ public  final class PersonProto extends
          getPhoneNumbersBuilderList() {
       return getPhoneNumbersFieldBuilder().getBuilderList();
     }
-    private com.google.protobuf.RepeatedFieldBuilder<
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         com.jakepartusch.generated.domain.PersonProto.PhoneNumber, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder, com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder> 
         getPhoneNumbersFieldBuilder() {
       if (phoneNumbersBuilder_ == null) {
-        phoneNumbersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+        phoneNumbersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.jakepartusch.generated.domain.PersonProto.PhoneNumber, com.jakepartusch.generated.domain.PersonProto.PhoneNumber.Builder, com.jakepartusch.generated.domain.PersonProto.PhoneNumberOrBuilder>(
                 phoneNumbers_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
@@ -1540,12 +1704,12 @@ public  final class PersonProto extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1562,24 +1726,19 @@ public  final class PersonProto extends
     return DEFAULT_INSTANCE;
   }
 
-  public static final com.google.protobuf.Parser<PersonProto> PARSER =
-      new com.google.protobuf.AbstractParser<PersonProto>() {
+  private static final com.google.protobuf.Parser<PersonProto>
+      PARSER = new com.google.protobuf.AbstractParser<PersonProto>() {
     public PersonProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      try {
         return new PersonProto(input, extensionRegistry);
-      } catch (RuntimeException e) {
-        if (e.getCause() instanceof
-            com.google.protobuf.InvalidProtocolBufferException) {
-          throw (com.google.protobuf.InvalidProtocolBufferException)
-              e.getCause();
-        }
-        throw e;
-      }
     }
   };
+
+  public static com.google.protobuf.Parser<PersonProto> parser() {
+    return PARSER;
+  }
 
   @java.lang.Override
   public com.google.protobuf.Parser<PersonProto> getParserForType() {

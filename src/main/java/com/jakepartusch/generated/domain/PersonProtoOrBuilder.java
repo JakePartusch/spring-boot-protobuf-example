@@ -8,41 +8,41 @@ public interface PersonProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional string firstName = 1;</code>
+   * <code>string firstName = 1;</code>
    */
   java.lang.String getFirstName();
   /**
-   * <code>optional string firstName = 1;</code>
+   * <code>string firstName = 1;</code>
    */
   com.google.protobuf.ByteString
       getFirstNameBytes();
 
   /**
-   * <code>optional string lastName = 2;</code>
+   * <code>string lastName = 2;</code>
    */
   java.lang.String getLastName();
   /**
-   * <code>optional string lastName = 2;</code>
+   * <code>string lastName = 2;</code>
    */
   com.google.protobuf.ByteString
       getLastNameBytes();
 
   /**
-   * <code>optional string emailAddress = 3;</code>
+   * <code>string emailAddress = 3;</code>
    */
   java.lang.String getEmailAddress();
   /**
-   * <code>optional string emailAddress = 3;</code>
+   * <code>string emailAddress = 3;</code>
    */
   com.google.protobuf.ByteString
       getEmailAddressBytes();
 
   /**
-   * <code>optional string homeAddress = 4;</code>
+   * <code>string homeAddress = 4;</code>
    */
   java.lang.String getHomeAddress();
   /**
-   * <code>optional string homeAddress = 4;</code>
+   * <code>string homeAddress = 4;</code>
    */
   com.google.protobuf.ByteString
       getHomeAddressBytes();
